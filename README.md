@@ -1,67 +1,64 @@
 # Diabetes-Friendly Barcode Scanner (CarboScan)
 
-Project Description:
-
 CarboScan Vision is a computer vision application designed to assist individuals with Type 1 Diabetes in monitoring their carbohydrate intake.
 
-The system uses real-time barcode detection through a webcam and retrieves nutritional information from the OpenFoodFacts database. Based on the carbohydrate content, the application classifies food products and provides recommended portion sizes.
+The system uses real-time barcode detection through a webcam and retrieves nutritional information from the [OpenFoodFacts](https://world.openfoodfacts.org/) database. Based on the carbohydrate content, the application classifies food products and provides recommended portion sizes.
 
-The application is implemented in Python and integrates computer vision techniques with a graphical user interface.
+The application is a Python desktop app that combines computer vision techniques with a graphical user interface built in Tkinter.
 
-Main Features:
+> **Disclaimer:** This is an educational project and not a medical device. It does not replace advice from a doctor or diabetes care team.
 
-* Real-time barcode detection using a webcam
-* Image preprocessing (grayscale conversion, Gaussian blur, adaptive thresholding)
-* Automatic carbohydrate classification (Low / Medium / High)
-* Recommended portion size calculation
-* Daily carbohydrate tracking
-* Scan history with timestamps
-* Graphical User Interface (Tkinter)
-* Persistent data storage using JSON
+## Features
 
-System Requirements:
+- Real-time barcode detection using a webcam
+- Image preprocessing (grayscale conversion, Gaussian blur, adaptive thresholding)
+- Automatic carbohydrate classification (Low / Medium / High)
+- Recommended portion size calculation
+- Daily carbohydrate tracking
+- Scan history with timestamps
+- Graphical user interface (Tkinter)
+- Persistent data storage using JSON
 
-* Operating System: Windows / macOS / Linux
-* Python Version: 3.9 or higher
-* Camera: Integrated or external webcam (720p recommended)
-* Internet Connection: Required for OpenFoodFacts API
+## Tech Stack
 
-Installation:
+Python · OpenCV · Pyzbar · Pillow · Requests · Tkinter · OpenFoodFacts API
 
-Step 1 – Check Python Installation
-Open terminal or command prompt:
-python --version
-Python 3.9 or higher is required.
+## Requirements
 
-Step 2 – Install Dependencies
-Navigate to the project folder:
-pip install -r requirements.txt
-Required libraries:
+- Operating system: Windows / macOS / Linux
+- Python 3.9 or higher
+- Webcam (integrated or external, 720p recommended)
+- Internet connection (required for the OpenFoodFacts API)
 
-* OpenCV – Image processing
-* Pyzbar – Barcode detection
-* Pillow – Image display
-* Requests – API communication
+## Installation
 
-Step 3 – Install ZBar Library
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ayoubalrhouli/Diabetes-Friendly-Barcode-Scanner.git
+   cd Diabetes-Friendly-Barcode-Scanner/Code
+   ```
 
-Windows:
-pip install pyzbar
+2. **Install the Python dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-macOS:
-brew install zbar
+3. **Install the ZBar library** (needed by Pyzbar)
+   - Windows: nothing extra, it is included with `pyzbar`
+   - macOS: `brew install zbar`
+   - Linux: `sudo apt-get install libzbar0`
 
-Linux:
-sudo apt-get install libzbar0
+## Usage
 
-Running the Application
-Run the program:
+From the `Code` folder, run:
+
+```bash
 python carboscan.py
+```
 
+Point a product barcode at the webcam and the app will detect it, fetch its nutritional information and show the carbohydrate class and recommended portion.
 
-
-Notes:
-
-* An internet connection is required to retrieve product information.
-* Some products may not be available in the OpenFoodFacts database.
-* Detection performance depends on lighting conditions and camera quality.
+## Notes
+- An internet connection is required to retrieve product information.
+- Some products may not be available in the OpenFoodFacts database.
+- Detection performance depends on lighting conditions and camera quality.
